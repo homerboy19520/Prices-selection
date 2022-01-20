@@ -23,12 +23,14 @@
       />
     </div>
 
-
-
-    <div
-    v-for="index in 2"
-    :key="index"
-    :class="['pricing-header__box', {'pricing-header__box_screen': index === 1}]">
+    <div class="pricing-header__box">
+      <img
+        class="pricing-header__img"
+        src="@/assets/background-image.png"
+        alt="background-image"
+      />
+    </div>
+        <div class="pricing-header__box_screen">
       <img
         class="pricing-header__img"
         src="@/assets/background-image.png"
@@ -50,7 +52,7 @@ export default {
     return {
       procent: 20,
       IsMonthly: true,
-      staticPrice: [],
+      pricesWithoutDiscount: [],
       mokData: [
         {
           level: "Basic",
@@ -107,13 +109,13 @@ export default {
 
     makeReverse: function () {
       this.mokData.forEach((item, index) => {
-        item.price = this.staticPrice[index];
+        item.price = this.pricesWithoutDiscount[index];
       });
     },
   },
   mounted() {
     this.mokData.forEach((item) => {
-      this.staticPrice.push(item.price);
+      this.pricesWithoutDiscount.push(item.price);
     });
   },
 };

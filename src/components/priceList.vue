@@ -19,15 +19,15 @@ export default {
   props: {
     level: {
       type: String,
-      require: true,
+      required: true,
     },
     price: {
       type: Number,
-      require: true,
+      required: true,
     },
     info: {
       type: Array,
-      require: true,
+      required: true,
     },
   },
 };
